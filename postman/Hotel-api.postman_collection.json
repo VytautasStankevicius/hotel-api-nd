@@ -1,0 +1,470 @@
+{
+	"info": {
+		"_postman_id": "0f9dec6b-e54f-4a8d-8d29-d1f8b0dd8c27",
+		"name": "Hotel-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32552196"
+	},
+	"item": [
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"email\": \"jonas@gmail.com\", \r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/v1/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"name\": \"Jonas\", \r\n    \"email\": \"jonas@gmail.com\", \r\n    \"role\" : \"admin\", \r\n    \"password\": \"123456789\", \r\n    \"passwordConfirm\": \"123456789\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/v1/users/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show all users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTYyMTZlYzFmNTczYTZiZDdiZTBiZiIsImlhdCI6MTcwOTU4MTIwMywiZXhwIjo2MTcwOTU4MTE0M30.aLWs9pLqlZ3Wmtete6OInsM379xgFI6SUIoJ1XRXJ08",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show user by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTYyMTZlYzFmNTczYTZiZDdiZTBiZiIsImlhdCI6MTcwOTU4MTIwMywiZXhwIjo2MTcwOTU4MTE0M30.aLWs9pLqlZ3Wmtete6OInsM379xgFI6SUIoJ1XRXJ08",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/api/v1/users/65e6216ec1f573a6bd7be0bf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"65e6216ec1f573a6bd7be0bf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a hotel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTYyMTZlYzFmNTczYTZiZDdiZTBiZiIsImlhdCI6MTcwOTU4MTIwMywiZXhwIjo2MTcwOTU4MTE0M30.aLWs9pLqlZ3Wmtete6OInsM379xgFI6SUIoJ1XRXJ08",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"name\" : \"Cat hotel\", \r\n    \"address\" : \"laisves al. 99\", \r\n    \"rankingAverage\" : 5, \r\n    \"room_price\" : 50, \r\n    \"comfort\" : \"4\", \r\n    \"summary\" : \"the best cat hotel\", \r\n    \"image_cover\" : \"cat.svg\" \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/v1/hotels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"hotels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update hotel information",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"name\" : \"Resort better cat\", \r\n    \"address\" : \"laisves al. 99\", \r\n    \"rankingAverage\" : 5, \r\n    \"room_price\" : 50, \r\n    \"comfort\" : \"4\", \r\n    \"summary\" : \"the best cat hotel\", \r\n    \"image_cover\" : \"cat.svg\" \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/v1/hotels/65e62618c1f573a6bd7be0c6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"hotels",
+						"65e62618c1f573a6bd7be0c6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a hotel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTYyMTZlYzFmNTczYTZiZDdiZTBiZiIsImlhdCI6MTcwOTU4MTIwMywiZXhwIjo2MTcwOTU4MTE0M30.aLWs9pLqlZ3Wmtete6OInsM379xgFI6SUIoJ1XRXJ08",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/api/v1/hotels/65e62618c1f573a6bd7be0c6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"hotels",
+						"65e62618c1f573a6bd7be0c6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show hotel by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/api/v1/hotels/65cdcdbcd3576f9268708e2a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"hotels",
+						"65cdcdbcd3576f9268708e2a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show all hotels",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTYyMTZlYzFmNTczYTZiZDdiZTBiZiIsImlhdCI6MTcwOTU4MTIwMywiZXhwIjo2MTcwOTU4MTE0M30.aLWs9pLqlZ3Wmtete6OInsM379xgFI6SUIoJ1XRXJ08",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/v1/hotels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"hotels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show top 5 best hotels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/api/v1/hotels/top-5-best",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"hotels",
+						"top-5-best"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Review a room",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTYyMTZlYzFmNTczYTZiZDdiZTBiZiIsImlhdCI6MTcwOTU4MTIwMywiZXhwIjo2MTcwOTU4MTE0M30.aLWs9pLqlZ3Wmtete6OInsM379xgFI6SUIoJ1XRXJ08",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"review\": \"This hotel stinks like a duck.\", \r\n    \"rating\": 10, \r\n    \"hotel\": \"65e04876c3020b35b3b57979\", \r\n    \"user\": \"65cdcc27f89d30dbb64a02d4\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/v1/rooms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"rooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a room",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTYyMTZlYzFmNTczYTZiZDdiZTBiZiIsImlhdCI6MTcwOTU4MTIwMywiZXhwIjo2MTcwOTU4MTE0M30.aLWs9pLqlZ3Wmtete6OInsM379xgFI6SUIoJ1XRXJ08",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"roomNr\": 500, \r\n    \"description\": \"Two bed apartment\", \r\n    \"photo\":\"room.svg\",\r\n    \"comesWith\": \"Wi-fi\", \r\n    \"hotel\": \"65cdcc27f89d30dbb64a02d4\", \r\n    \"user\": \"65e02baa95bf6044908406e9\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/v1/hotels/room",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"hotels",
+						"room"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show all rooms",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTYyMTZlYzFmNTczYTZiZDdiZTBiZiIsImlhdCI6MTcwOTU4MTIwMywiZXhwIjo2MTcwOTU4MTE0M30.aLWs9pLqlZ3Wmtete6OInsM379xgFI6SUIoJ1XRXJ08",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/api/v1/hotels/rooms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"hotels",
+						"rooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show all reviews",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTYyMTZlYzFmNTczYTZiZDdiZTBiZiIsImlhdCI6MTcwOTU4MTIwMywiZXhwIjo2MTcwOTU4MTE0M30.aLWs9pLqlZ3Wmtete6OInsM379xgFI6SUIoJ1XRXJ08",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/api/v1/65e02baa95bf6044908406e9/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"65e02baa95bf6044908406e9",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

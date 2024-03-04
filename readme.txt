@@ -1,0 +1,1 @@
+Postman collection provided in postman folder
